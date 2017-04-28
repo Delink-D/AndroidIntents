@@ -7,16 +7,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button mSendAlert;
+    @Bind(R.id.sendAlert) Button mSendAlert;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mSendAlert = (Button) findViewById(R.id.sendAlert);
+        ButterKnife.bind(this);
 
         mSendAlert.setOnClickListener(this);
     }
